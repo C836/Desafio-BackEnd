@@ -1,12 +1,22 @@
 const fs = require('fs');
 
-let student = { 
-    name: 'Mike',
-    age: 23, 
-    gender: 'Male',
-    department: 'English',
-    car: 'Honda' 
-};
- 
-let data = JSON.stringify(student);
-fs.writeFileSync('student-2.json', data);
+module.exports = {
+
+    json: function(arr,address) {
+        let distancias = {}
+        let arrayObj = []
+
+        for(x in arr){
+            distancias = {
+                main_address : "endereco",
+                address : "o outro",
+                distance : arr[x]
+            }
+
+            arrayObj.push(distancias)
+        }
+
+        let data = JSON.stringify(arrayObj);
+        fs.writeFileSync('resultado.json', data);
+    }
+}

@@ -1,16 +1,18 @@
+const create = require("./resultado.js")
+
 module.exports = {
+    
     calc: function(arr) {
-        i=0
-        distancias=[]
+        
+        let i=0
+        let distancias=[]
         while(i<((arr.length-2)/2)){
             const lat1=arr[0]
             const lon1=arr[1]
     
             var lat2=arr[(i*2)+2]
             var lon2=arr[(i*2)+3]
-    
-            console.log(lat1,lon1,lat2,lon2,(i*2)+2)
-    
+
             const raio = 6371e3;
     
             var rad1 = lat1 * Math.PI/180;
@@ -31,6 +33,7 @@ module.exports = {
     
             i++;
         }
-        return distancias
+        console.log(distancias)
+        create.json(distancias)
     }
 };
