@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js"
+    "start": "nodemon ./data/input.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
     "mathjs": "^10.4.0",
+    "node-fetch": "^2.6.7",
     "nodemon": "^2.0.15",
     "prompt": "^1.2.2",
     "prompt-sync-history": "^1.0.1"
