@@ -1,22 +1,10 @@
 const fs = require('fs');
 
 module.exports = {
+    json: function(obj) {
+        console.log(obj)
+        fs.writeFileSync('./resultado.json', JSON.stringify(obj));
 
-    json: function(arr,address) {
-        let distancias = {}
-        let arrayObj = []
-
-        for(x in arr){
-            distancias = {
-                main_address : "endereco",
-                address : "o outro",
-                distance : arr[x]
-            }
-
-            arrayObj.push(distancias)
-        }
-
-        let data = JSON.stringify(arrayObj);
-        fs.writeFileSync('resultado.json', data);
+        console.log("\nResultado omitido com sucesso em 'resultado.json'")
     }
 }

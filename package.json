@@ -1,19 +1,15 @@
 {
   "name": "desafio-back-end",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Calculo de distâncias entre dois pontos do mundo",
+  "main": "./data/input.js",
   "scripts": {
-    "start": "nodemon ./data/input.js"
+    "start": "nodemon -q ./data/input.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3",
-    "mathjs": "^10.4.0",
     "node-fetch": "^2.6.7",
-    "nodemon": "^2.0.15",
-    "prompt": "^1.2.2",
-    "prompt-sync-history": "^1.0.1"
+    "nodemon": "^2.0.15"
   }
 }

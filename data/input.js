@@ -2,30 +2,37 @@ const loc = require('./api.js')
 const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
+  terminal: false
 });
 
 function input() {
-    let arr=[]
+    let answers=[]
 
-    rl.question('Digite o endereço principal : ', function (ans) {
-        arr.push(ans)
+    console.log(
+    "\n=======================================",
+    "\nDesenvolvido por Gabriel Lopes // https://github.com/C836", 
+    "\nDigite 'rs' a qualquer momento para reiniciar o prompt",
+    "\n=======================================\n")
 
-    rl.question('Digite um endereço para comparar a distância : ', function (ans) {
-        arr.push(ans)
+    rl.question('Digite o endereço principal : \n> ', function (ans) {
+        answers.push(ans)
 
-        recursiveAsyncReadLine()
+    rl.question('Digite um endereço para comparar a distância : \n> ', function (ans) {
+        answers.push(ans)
 
-        function recursiveAsyncReadLine() {
-        rl.question('Digite endereços adicionais para comparar ou "start" para iniciar : ', function (ans) {
+        awse()
+
+        function awse() {
+        rl.question('Digite endereços adicionais para comparar ou "start" para iniciar : \n> ', function (ans) {
             
             if(ans!=='start'){
-            arr.push(ans);
-            recursiveAsyncReadLine()
+            answers.push(ans);
+            awse()
         }
             else{
                 rl.close()
-                loc.get(arr)
+                loc.get(answers)
 }})}})})}
 
 input()

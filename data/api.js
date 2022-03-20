@@ -1,12 +1,12 @@
 const fetch = require('node-fetch')
 const calc = require('./calc')
 
-arr=[]
+arrDistancias=[]
 
 module.exports = {
     get: function(enderecos) {
         for(x in enderecos){
-            let nome=enderecos[x]
+            let nome = enderecos[x]
 
             fetch(`http://api.positionstack.com/v1/forward?access_key=debd91e6cd3bdf06bddc138dfb493b2d&query=${enderecos[x]}`)
 
@@ -20,8 +20,8 @@ module.exports = {
                     long : json.data[0].longitude
                 }
             
-                arr.push(distancias)
-                calc.calc(arr)
+                arrDistancias.push(distancias)
+                calc.calc(arrDistancias)
             })
         }
     }
